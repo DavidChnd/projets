@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projets – David Chassagnaud</title>
+  <style>
+    :root {
+      --fond: #f5f5f7;
+      --card-bg: #ffffff;
+      --texte: #2c3e50;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+      --accent: #3d5a40;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--fond);
+      color: var(--texte);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+      background-color: var(--card-bg);
+      box-shadow: 0 2px 6px var(--card-shadow);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .navbar a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--texte);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: var(--accent);
+    }
+
+    .banner {
+      width: 90%;
+      margin: 30px auto;
+      opacity: 0;
+      animation: fadeInBanner 1s ease-in forwards;
+    }
+
+    .banner img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      transition: filter 0.3s ease;
+    }
+
+    .banner img:hover {
+      filter: brightness(1.3);
+    }
+
+    @keyframes fadeInBanner {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+      padding: 2rem;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeInGrid 1s ease-in 1s forwards;
+    }
+
+    @keyframes fadeInGrid {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      padding: 1.5rem 1.2rem;
+      transition: transform 0.4s ease, box-shadow 0.4s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      min-height: 200px;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .arrow {
+      font-size: 1.6rem;
+      color: var(--accent);
+      align-self: flex-end;
+      margin-top: auto;
+    }
+
+    .footer {
+      width: 100%;
+      max-width: 1000px;
+      margin: 100px auto 0;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .footer img {
+      height: 24px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    .footer a {
+      margin-left: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar a {
+        margin-left: 0;
+        margin-top: 8px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+
+      .card {
+        padding: 1.2rem 1rem;
+        width: 80%;
+        margin: 0 auto;
+        min-height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation principale -->
+  <div class="navbar">
+    <h1>David Chassagnaud</h1>
+    <div>
+      <a href="../genforfutur/index.html">GenForFutur</a>
+      <a href="../0phyto/index.html">0Phyto</a>
+      <a href="../autres/index.html">Autres</a>
+    </div>
+  </div>
+
+  <!-- Bannière -->
+  <div class="banner">
+    <img src="img/banniere_hub.png" alt="Bannière">
+  </div>
+
+  <!-- Grille de projets -->
+  <div class="grid">
+    <a class="card" href="../genforfutur/index.html">
+      <h2>GenForFutur</h2>
+      <p>Climat, isotopes et croissance forestière</p>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="../0phyto/index.html">
+      <h2>Projet 0Phyto</h2>
+      <p>Systèmes agricoles sans phytosanitaires</p>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="../autres/index.html">
+      <h2>Autres projets</h2>
+      <p>Projets exploratoires, personnels et 3D</p>
+      <div class="arrow">›</div>
+    </a>
+  </div>
+
+  <!-- Pied de page -->
+  <div class="footer">
+    <span>David Chassagnaud</span>
+    <div>
+      <a href="https://github.com/DavidChnd" target="_blank">
+        <img src="img/logo-github.png" alt="GitHub">
+      </a>
+      <a href="mailto:david.chassagnaud@gmail.com" target="_blank">
+        <img src="img/logo-gmail.png" alt="Gmail">
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
